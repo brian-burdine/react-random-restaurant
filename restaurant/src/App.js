@@ -11,7 +11,7 @@ function App() {
         <Menu />
         <Footer />
     </>
-  )
+  );
 }
 
 export default App;

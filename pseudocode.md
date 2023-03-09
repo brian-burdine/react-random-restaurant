@@ -82,11 +82,22 @@ The application components are:
   - Returns a `<h1>` element with the restaurant's name, and possibly a more involved logo with a couple of fonts and a background image if time permits
 - **SiteBar**
   - Called by **SiteHeader**
+  - Creates a *PAGES* array that contains objects with the properties:
+    - *id*: a string that identifies the view of the given page
+    - *text*: a string that is used as the link text displayed to the user
+    - *additionalClasses*: a string that identifies any additional Bootstrap classes to add to a particular site's link, at the moment used to style the 'Menu' link as active and exmphasize the 'Order Now!' link. If the current page becomes something that can change, the active styling will come from conditional rendering instead
   - Returns a `<navbar>` element with **NavItem** links to the site's pages, dummied out. The "Menu" link is marked active
   - In the future the links might actually be buttons that use *setPageView* to change the state of *pageView* when clicked, and the button associated with the current *pageView* might be styled as active
 - **NavItem**
   - Called by **SiteBar** and **MenuBar**
   - Receives a *view*, *additionalClasses*, *text* and a *setView* function from *props*
+  - Defines an internal function as an event handler for the `<a>` element it generates, *handleClick*:
+    - calls *setView* and gives it the event's target's id as an argument
+  - Returns a `<li>` element with "nav-item" styling that contains an `<a>` element with:
+    - "nav-link" styling, plus any *additionalClasses*
+    - an id attribute of *view*
+    - an onClick attribute that calls an internal function, *handleClick*
+    - internal text of *text*
 - **Menu**
   - Called by **App**
   - Creates *menu*, *setMenu*, *menuView*, and *setMenuView* in state

@@ -33,7 +33,7 @@ function SiteBar() {
     <nav className="navbar navbar-expand-lg" id="site-nav">
         <div className="container-fluid">
             <button 
-                class="navbar-toggler" 
+                className="navbar-toggler" 
                 type="button" 
                 data-bs-toggle="collapse" 
                 data-bs-target="#site-nav-bar" 
@@ -41,9 +41,9 @@ function SiteBar() {
                 aria-expanded="false" 
                 aria-label="Toggle navigation"
             >
-                <span class="navbar-toggler-icon"></span>
+                <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="site-nav-bar">
+            <div className="collapse navbar-collapse" id="site-nav-bar">
                 <ul className="navbar-nav nav-fill">
                     {PAGES.map((page, index) => {
                         return <NavItem 

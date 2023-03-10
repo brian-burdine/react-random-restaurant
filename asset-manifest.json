@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/react-random-restaurant/static/css/main.8d6a17ca.css",
+    "main.js": "/react-random-restaurant/static/js/main.dffa9c18.js",
+    "index.html": "/react-random-restaurant/index.html",
+    "main.8d6a17ca.css.map": "/react-random-restaurant/static/css/main.8d6a17ca.css.map",
+    "main.dffa9c18.js.map": "/react-random-restaurant/static/js/main.dffa9c18.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8d6a17ca.css",
+    "static/js/main.dffa9c18.js"
+  ]
+}

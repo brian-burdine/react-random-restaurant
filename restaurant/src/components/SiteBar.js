@@ -6,31 +6,31 @@ function SiteBar() {
         {
             id: "home",
             text: "Home",
-            additionalClasses: "disabled"
+            additionalClasses: "disabled me-5"
         }, 
         {
             id: "menu",
             text: "Menu",
-            additionalClasses: "active"
+            additionalClasses: "active me-5"
         }, 
         {
             id: "about",
             text: "About",
-            additionalClasses: "disabled"
+            additionalClasses: "disabled me-5"
         }, 
         {
             id: "contact",
             text: "Contact",
-            additionalClasses: "disabled"
+            additionalClasses: "disabled me-5"
         }, 
         {
             id: "online-order",
             text: "Order Now!",
-            additionalClasses: "btn btn-primary"
+            additionalClasses: "bg-primary text-light"
         }
     ]
     return (
-        <nav className="navbar navbar-expand-lg" id="site-nav">
+        <nav className="navbar navbar-expand-lg bg-body-warning" id="site-nav">
             <div className="container-fluid">
                 <button 
                     className="navbar-toggler" 
@@ -44,7 +44,7 @@ function SiteBar() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
                 <div className="collapse navbar-collapse" id="site-nav-bar">
-                    <ul className="navbar-nav nav-fill me-auto mb-2">
+                    <ul className="nav nav-tab nav-fill mx-auto mb-2">
                         {PAGES.map((page, index) => {
                             return (
                                 <NavItem 

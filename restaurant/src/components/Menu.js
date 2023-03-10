@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import getData from '../utilities/getData';
+import AllDay from './AllDay';
+import Breakfast from './Breakfast';
+import Drinks from './Drinks';
 import MenuBar from './MenuBar';
-import MenuHeader from './MenuHeader';
-import MenuItem from './MenuItem';
 
 function Menu() {
     const MENU_URL = "https://www.jsonkeeper.com/b/MDXW";
@@ -21,29 +22,33 @@ function Menu() {
             <div className='row'>
                 <MenuBar view={menuView} setView={setMenuView} />
             </div>
-            <div className='row'>
-            <p>{`Breakfast: ${menu.filter(recipe => recipe.category === "Breakfast").length}`}</p>
-            <p>{`Lunch: ${menu.filter(recipe => recipe.category === "Lunch").length}`}</p>
-            <p>{`Dinner: ${menu.filter(recipe => recipe.category === "Dinner").length}`}</p>
-            <p>{`Drinks: ${menu.filter(recipe => recipe.category === "Drink").length}`}</p>
-                <MenuHeader text="Appetizers" />
-                <p>{`Count: ${menu.filter(recipe => recipe.category === "Appetizer").length}`}</p>
-                {menu.filter(recipe => recipe.category === "Appetizer")
-                    .map((recipe, index) => {
-                        if (index < 7) {
-                            return <MenuItem
-                                key={recipe.id} 
-                                title={recipe.title} 
-                                price={recipe.price}
-                                description={recipe.description} 
-                                spice_level={recipe.spice_level}
-                            />
-                        } else {
-                            return null;
-                        }
-                    })
-                }
-            </div>
+            {
+                ((menuView === "breakfast") && 
+                    <Breakfast 
+                        menu={menu.filter(recipe => {
+                            return recipe.category === "Breakfast";
+                        })} 
+                    />
+                ) 
+                || ((menuView === "all-day") && 
+                    <AllDay 
+                        menu={menu.filter(recipe => {
+                            return (
+                                recipe.category === "Appetizer" || 
+                                recipe.category === "Lunch" || 
+                                recipe.category === "Dinner"
+                            );
+                        })}
+                    />
+                ) 
+                || ((menuView === "drinks") && 
+                    <Drinks 
+                        menu={menu.filter(recipe => {
+                            return recipe.category === "Drink";
+                        })}
+                    />
+                )
+            }
         </div>
     )
 }
@@ -69,4 +74,9 @@ export default Menu;
                     );
                 })}
             </ul>
+
+            <p>{`Breakfast: ${menu.filter(recipe => recipe.category === "Breakfast").length}`}</p>
+            <p>{`Lunch: ${menu.filter(recipe => recipe.category === "Lunch").length}`}</p>
+            <p>{`Dinner: ${menu.filter(recipe => recipe.category === "Dinner").length}`}</p>
+            <p>{`Drinks: ${menu.filter(recipe => recipe.category === "Drink").length}`}</p>
 */

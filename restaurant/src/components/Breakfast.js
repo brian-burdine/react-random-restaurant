@@ -3,6 +3,7 @@ import MenuHeader from "./MenuHeader";
 import MenuItem from "./MenuItem";
 
 function Breakfast ({menu}) {
+    document.title = "Breakfast Menu";
     if (menu.length > 0) {
         return (
             <>

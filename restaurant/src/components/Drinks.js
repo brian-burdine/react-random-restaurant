@@ -2,6 +2,7 @@ import MenuHeader from "./MenuHeader";
 import MenuItem from "./MenuItem";
 
 function Drinks ({menu}) {
+    document.title = "Drinks Menu";
     if (menu.length > 0) {
         return (
             <>

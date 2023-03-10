@@ -3,6 +3,7 @@ import MenuHeader from "./MenuHeader";
 import MenuItem from "./MenuItem";
 
 function AllDay ({menu}) {
+    document.title = "All Day Menu";
     if (menu.length > 0) {
         return (
             <>

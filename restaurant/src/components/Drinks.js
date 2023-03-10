@@ -16,7 +16,7 @@ function Drinks ({menu}) {
                                 title={recipe.title} 
                                 price={recipe.price}
                                 description={recipe.description} 
-                                spice_level={recipe.spice_level}
+                                spicy_level={recipe.spicy_level}
                             />
                         )
                     })}

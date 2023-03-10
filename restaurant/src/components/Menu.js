@@ -17,24 +17,33 @@ function Menu() {
     }, []);
 
     return (
-        <div id="menu-page">
-            <MenuBar setView={setMenuView} />
-            <MenuHeader text="Appetizers" />
-            {menu.filter(recipe => recipe.category === "Appetizer")
-                .map((recipe, index) => {
-                    if (index === 0) {
-                        return <MenuItem
-                            key={recipe.id} 
-                            title={recipe.title} 
-                            price={recipe.price}
-                            description={recipe.description} 
-                            spice_level={recipe.spice_level}
-                        />
-                    } else {
-                        return null;
-                    }
-                })}
-            <MenuItem />
+        <div className='container' id="menu-page">
+            <div className='row'>
+                <MenuBar view={menuView} setView={setMenuView} />
+            </div>
+            <div className='row'>
+            <p>{`Breakfast: ${menu.filter(recipe => recipe.category === "Breakfast").length}`}</p>
+            <p>{`Lunch: ${menu.filter(recipe => recipe.category === "Lunch").length}`}</p>
+            <p>{`Dinner: ${menu.filter(recipe => recipe.category === "Dinner").length}`}</p>
+            <p>{`Drinks: ${menu.filter(recipe => recipe.category === "Drink").length}`}</p>
+                <MenuHeader text="Appetizers" />
+                <p>{`Count: ${menu.filter(recipe => recipe.category === "Appetizer").length}`}</p>
+                {menu.filter(recipe => recipe.category === "Appetizer")
+                    .map((recipe, index) => {
+                        if (index < 7) {
+                            return <MenuItem
+                                key={recipe.id} 
+                                title={recipe.title} 
+                                price={recipe.price}
+                                description={recipe.description} 
+                                spice_level={recipe.spice_level}
+                            />
+                        } else {
+                            return null;
+                        }
+                    })
+                }
+            </div>
         </div>
     )
 }

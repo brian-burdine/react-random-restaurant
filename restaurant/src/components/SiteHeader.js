@@ -4,9 +4,11 @@ import SiteLogo from "./SiteLogo";
 function SiteHeader () {
     return (
         <header>
-            <div className="container justify-content-center" id="site-header">
-                <SiteLogo />
-                <SiteBar />
+            <div className="container text-center" id="site-header">
+                <div className="row justify-content-center">
+                    <SiteLogo />
+                    <SiteBar />
+                </div>
             </div>
         </header>
     );

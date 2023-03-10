@@ -1,3 +1,4 @@
+import makeRandomList from '../utilities/makeRandomList';
 import MenuHeader from "./MenuHeader";
 import MenuItem from "./MenuItem";
 
@@ -9,7 +10,7 @@ function Breakfast ({menu}) {
                     <MenuHeader text="Breakfast" />
                 </div>
                 <div className="row">
-                    {menu.map(recipe => {
+                    {makeRandomList(menu, 6).map(recipe => {
                         return (
                             <MenuItem
                                 key={recipe.id} 

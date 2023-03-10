@@ -16,7 +16,7 @@ function Menu() {
                 setMenu(data)
             })
     }, []);
-
+    
     return (
         <div className='container' id="menu-page">
             <div className='row'>
@@ -56,6 +56,9 @@ function Menu() {
 export default Menu;
 
 /*
+
+    let aList = [67, 3, 48, 12, 16, 74, 555, 41];
+    console.log(makeRandomList(aList, 3));
 
     let cuisineList = [];
     for (let recipe of menu) {

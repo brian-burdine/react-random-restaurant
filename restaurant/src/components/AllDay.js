@@ -1,3 +1,4 @@
+import makeRandomList from "../utilities/makeRandomList";
 import MenuHeader from "./MenuHeader";
 import MenuItem from "./MenuItem";
 
@@ -9,7 +10,8 @@ function AllDay ({menu}) {
                     <MenuHeader text="Appetizers" />
                 </div>
                 <div className="row">
-                    {menu.filter(recipe => recipe.category === "Appetizer")
+                    {makeRandomList(menu.filter(recipe => {
+                        return recipe.category === "Appetizer"}), 6)
                         .map(recipe => {
                             return (
                                 <MenuItem
@@ -27,10 +29,10 @@ function AllDay ({menu}) {
                     <MenuHeader text="Entrees" />
                 </div>
                 <div className="row">
-                    {menu.filter(recipe => {
+                    {makeRandomList(menu.filter(recipe => {
                         return (recipe.category === "Lunch") ||
                             (recipe.category === "Dinner")
-                        })
+                        }), 12)
                         .map(recipe => {
                             return (
                                 <MenuItem
